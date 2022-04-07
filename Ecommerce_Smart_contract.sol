@@ -59,11 +59,6 @@ contract Ecommerce{
         products[_productId-1].seller.transfer(products[_productId-1].price);
         emit delivered(_productId);
     }
-
-    // function destroy() public{
-    //     require(msg.sender==manager,"Only manager can call this function");
-    //     selfdestruct(manager);
-    // }
     
     function destroy() public isNotDestroyed{
         require(manager == msg.sender);
